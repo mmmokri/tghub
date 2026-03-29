@@ -1,0 +1,176 @@
+.admin-cabinet-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px 20px 100px 20px;
+  text-align: left;
+}
+
+.cabinet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cabinet-header h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.notification-icon {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.cabinet-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.avatar-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #D9D9D9;
+  flex-shrink: 0;
+}
+
+.profile-info h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+}
+
+.username {
+  font-size: 14px;
+  margin: 0 0 12px 0;
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 4px 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.cabinet-section h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+}
+
+.groups-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.group-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.group-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.group-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-small {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.cabinet-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-logout {
+  border: 1px solid;
+  background: transparent;
+}
+
+/* Нижнее меню */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 10;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  opacity: 0.6;
+  cursor: pointer;
+  text-align: center;
+}
+
+.nav-item span {
+  max-width: 80px;
+  line-height: 1.2;
+}
+
+.nav-item.active {
+  opacity: 1;
+}

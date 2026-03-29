@@ -1,0 +1,154 @@
+.edit-profile-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px 20px 100px 20px;
+  text-align: left;
+}
+
+.edit-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  margin-left: -8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-profile-header h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.edit-profile-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: '▼';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.input-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.edit-profile-form .stack-section {
+  text-align: left;
+  margin: 12px 0 24px;
+}
+
+.stack-title {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.stack-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stack-tile {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.stack-tile.selected {
+  border-width: 2px;
+  font-weight: 500;
+}
+
+.edit-actions-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.edit-actions-row .btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Нижнее меню */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 10;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  opacity: 1;
+}

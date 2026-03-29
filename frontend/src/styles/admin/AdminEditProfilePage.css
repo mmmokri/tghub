@@ -1,0 +1,152 @@
+.admin-edit-profile-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  padding-bottom: 70px;
+  background-color: #1A2026; /* Deep dark bg from image */
+}
+
+.edit-profile-header {
+  display: flex;
+  align-items: center;
+  padding: 24px 20px;
+  gap: 16px;
+}
+
+.edit-profile-header h1 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.edit-profile-content {
+  flex: 1;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-input {
+  width: 100%;
+  padding: 24px;
+  border-radius: 12px;
+  border: none;
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
+  margin-top: 120px; /* Increased margin to match image gap */
+  background-color: #212932;
+  color: #FFFFFF;
+}
+
+.profile-input::placeholder {
+  color: #8E949A;
+}
+
+.admin-edit-profile-container .stack-section {
+  margin-top: 60px;
+}
+
+.section-label {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #8E949A;
+}
+
+.stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.stack-chip {
+  padding: 12px 20px;
+  border-radius: 16px;
+  border: 1.5px solid;
+  background: transparent;
+  font-size: 14px;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.btn {
+  flex: 1;
+  padding: 18px;
+  border-radius: 16px;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: #248BDA;
+  color: #FFFFFF;
+}
+
+.btn-cancel {
+  background-color: #212932;
+  color: #FFFFFF;
+}
+
+/* Нижнее меню */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #8E949A;
+  cursor: pointer;
+  width: 25%;
+  text-align: center;
+}
+
+.nav-item span {
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.nav-item.active {
+  color: #248BDA;
+}

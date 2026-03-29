@@ -1,0 +1,139 @@
+.notifications-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px 20px 100px 20px;
+  text-align: left;
+}
+
+.notifications-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  margin-left: -8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notifications-header h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.notifications-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notification-card {
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #D9D9D9;
+}
+
+.category-tag {
+  padding: 6px 12px;
+  border: 1px solid;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.interview-details {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.interview-details p {
+  margin: 4px 0;
+}
+
+.interview-time {
+  margin-top: 12px !important;
+  font-weight: 500;
+  opacity: 1 !important;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Нижнее меню */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  opacity: 1;
+}

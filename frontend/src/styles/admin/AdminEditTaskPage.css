@@ -1,0 +1,113 @@
+.edit-task-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px 20px 100px 20px;
+  text-align: left;
+}
+
+.edit-task-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  margin-left: -8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-task-header h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.edit-task-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.edit-task-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.edit-task-actions .btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Нижнее меню */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 10;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  opacity: 0.6;
+  cursor: pointer;
+  text-align: center;
+}
+
+.nav-item span {
+  max-width: 80px;
+  line-height: 1.2;
+}
+
+.nav-item.active {
+  opacity: 1;
+}

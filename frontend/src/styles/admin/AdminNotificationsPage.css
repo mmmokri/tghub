@@ -1,0 +1,146 @@
+.admin-notifications-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px 20px 100px 20px;
+  text-align: left;
+}
+
+.notifications-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  margin-left: -8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notifications-header h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.notifications-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.notification-card {
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notification-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #D9D9D9;
+}
+
+.type-tag {
+  padding: 6px 14px;
+  border: 1px solid;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.notification-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.main-message {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.details-section {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.details-section p {
+  margin: 0;
+}
+
+.date-time {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.notification-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.notification-actions .btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Нижнее меню */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 10;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  opacity: 0.6;
+  cursor: pointer;
+  text-align: center;
+}
+
+.nav-item span {
+  max-width: 80px;
+  line-height: 1.2;
+}
+
+.nav-item.active {
+  opacity: 1;
+}

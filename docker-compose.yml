@@ -52,18 +52,35 @@ services:
       dockerfile: Dockerfile
     container_name: telegram_frontend
     ports:
-      - "80:80"  # Веб-сервер на 80 порту
+      - "80:80"
+      - "443:443"
     depends_on:
       - backend
     networks:
       - app_network
     restart: unless-stopped
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - ./frontend/nginx:/etc/nginx/conf.d:ro
+
+  # === CERTBOT для SSL ===
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - ./frontend/nginx/certbot_web:/var/www/certbot
+    command: certbot certonly --webroot -w /var/www/certbot --force-renewal --email floatmouz@gmail.com -d hubtg.ru --agree-tos
+    networks:
+      - app_network
+    depends_on:
+      - frontend
+    # Удалить или закомментировать после получения первого сертификата
+    # Для автоматического обновления настроить cronjob или systemd таймер
+    # entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $!; done;'"
 
 # === ТОМА (хранилище данных) ===
 volumes:
-  postgres_data:  # Данные БД сохраняются даже при удалении контейнера
-
-# === СЕТЬ ===
-networks:
-  app_network:
-    driver: bridge
+  postgres_data:
+  certbot-etc:
+  certbot-web:

@@ -7,7 +7,10 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build
+
+# Устанавливаем права на выполнение для tsc
+RUN chmod +x ./node_modules/.bin/tsc
+RUN ./node_modules/.bin/tsc && vite build
 
 # === ПРОДАКШЕН СТАДИЯ ===
 # Используем Nginx для раздачи статических файлов

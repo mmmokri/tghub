@@ -10,6 +10,9 @@ COPY package*.json ./
 # Устанавливаем зависимости
 RUN npm ci
 
+# Устанавливаем права на выполнение для tsc
+RUN chmod +x ./node_modules/.bin/tsc
+
 # Копируем весь исходный код
 COPY . .
 

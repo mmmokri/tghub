@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build
+RUN VITE_API_URL='' npm run build
 
 # === ПРОДАКШЕН СТАДИЯ ===
 # Используем Nginx для раздачи статических файлов

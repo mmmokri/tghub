@@ -10,14 +10,11 @@ COPY package*.json ./
 # Устанавливаем зависимости
 RUN npm ci
 
-# Устанавливаем права на выполнение для tsc
-RUN chmod +x ./node_modules/.bin/tsc
-
 # Копируем весь исходный код
 COPY . .
 
 # Собираем проект (выполняет npm run build)
-RUN ./node_modules/.bin/tsc
+RUN ls -l ./node_modules/.bin/tsc && cat ./node_modules/.bin/tsc && npm run build
 
 # === ВТОРАЯ СТАДИЯ (production) ===
 FROM node:20-alpine

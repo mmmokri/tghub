@@ -14,7 +14,7 @@ RUN npm ci
 COPY . .
 
 # Собираем проект (выполняет npm run build)
-RUN ls -l ./node_modules/.bin/tsc && cat ./node_modules/.bin/tsc && npm run build
+RUN node ./node_modules/typescript/bin/tsc
 
 # === ВТОРАЯ СТАДИЯ (production) ===
 FROM node:20-alpine

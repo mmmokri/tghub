@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN ls -l ./node_modules/.bin/tsc && cat ./node_modules/.bin/tsc && npm run build
+RUN node ./node_modules/typescript/bin/tsc && vite build
 
 # === ПРОДАКШЕН СТАДИЯ ===
 # Используем Nginx для раздачи статических файлов

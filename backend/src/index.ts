@@ -87,23 +87,27 @@ initDb();
 
 // 1. Авторизация/Регистрация пользователя
 app.post('/api/auth', async (req, res) => {
+  console.log('Received /api/auth request body:', req.body); // Добавлено логирование
   const { initData, userData } = req.body;
-  const botToken = process.env.TELEGRAM_BOT_TOKEN;
 
-  if (!botToken) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  if (!token) {
+    console.error('TELEGRAM_BOT_TOKEN is not set!'); // Добавлено логирование
     return res.status(500).json({ error: 'Server configuration error' });
   }
 
-  // В продакшене раскомментировать валидацию:
-  /*
-  if (!validateInitData(initData, botToken)) {
-    return res.status(403).json({ error: 'Invalid authentication data' });
+  // --- Telegram Web App Data Validation ---
+  console.log('Attempting to validate Telegram initData...'); // Добавлено логирование
+  if (!validateInitData(initData, token)) { // Использована существующая функция validateInitData
+    console.error('Telegram Web App data validation failed for initData:', initData); // Добавлено логирование
+    return res.status(401).json({ error: 'Unauthorized: Invalid Telegram Web App data' });
   }
-  */
+  console.log('Telegram initData validated successfully.'); // Добавлено логирование
 
+  // После валидации initData, продолжаем с данными пользователя из req.body
   try {
     const { id, username, first_name, last_name, photo_url } = userData;
-
+    console.log('Attempting to insert/update user:', { id, username, first_name, last_name, photo_url }); // Добавлено логирование
     // Сохраняем или обновляем пользователя в БД
     const [user] = await sql`
       INSERT INTO users (id, username, first_name, last_name, photo_url)
@@ -115,10 +119,10 @@ app.post('/api/auth', async (req, res) => {
         photo_url = EXCLUDED.photo_url
       RETURNING *
     `;
-
+    console.log('User inserted/updated successfully:', user); // Добавлено логирование
     res.json({ success: true, user });
   } catch (err) {
-    console.error('Auth error:', err);
+    console.error('Auth database error:', err); // Изменено логирование для ясности
     res.status(500).json({ error: 'Database error' });
   }
 });

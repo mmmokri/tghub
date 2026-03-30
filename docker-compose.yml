@@ -68,7 +68,7 @@ services:
     container_name: certbot
     volumes:
       - certbot-etc:/etc/letsencrypt
-      - ./frontend/nginx/certbot_web:/var/www/certbot
+      - certbot-web:/var/www/certbot # Теперь используем именованный том для Certbot
     command: certonly --webroot -w /var/www/certbot --force-renewal --email floatmouz@gmail.com -d hubtg.ru --agree-tos
     networks:
       - app_network

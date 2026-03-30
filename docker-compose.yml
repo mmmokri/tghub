@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # === БАЗА ДАННЫХ ===
   postgres:
@@ -84,3 +82,7 @@ volumes:
   postgres_data:
   certbot-etc:
   certbot-web:
+
+networks:
+  app_network:
+    driver: bridge

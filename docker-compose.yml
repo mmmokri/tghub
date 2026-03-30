@@ -68,7 +68,7 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - ./frontend/nginx/certbot_web:/var/www/certbot
-    command: certbot certonly --webroot -w /var/www/certbot --force-renewal --email floatmouz@gmail.com -d hubtg.ru --agree-tos
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email floatmouz@gmail.com -d hubtg.ru --agree-tos
     networks:
       - app_network
     depends_on:
